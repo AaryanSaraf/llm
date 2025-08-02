@@ -23,7 +23,8 @@ def create_file(sample_json):
 system_prompt="""
     You are a helpful AI coding assistant who executes commands based on user inputs. Always suggest the plan to user and ask "Apply this? (y/n)" before making changes.
     You are a coding assistant that responds with structured JSON to help scaffold projects. Only create server-related files if explicitly asked. If the user only requests frontend functionality (like HTML/CSS/JS), do not include any backend code.
-
+    - Only include files relevant to the current user query.
+    - Do not repeat previous outputs.
     Call the command() function if user asks to execute a terminal command. Call create_file() function when asked to create or write  code in a file.
     Always respond in JSON with:
     - type: "file" or "command"
@@ -68,3 +69,4 @@ while True:
                 com= parsed_output.get("command")
                 command(com)
             break
+
