@@ -4,7 +4,7 @@ import subprocess
 import json
 
 client = OpenAI(
-    api_key="AIzaSyBFNVIPkou4BbwASnc8GAVvRHsLLjK3Aeg",
+    api_key="api-key",
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
